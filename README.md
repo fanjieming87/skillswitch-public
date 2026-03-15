@@ -1,6 +1,7 @@
 # SkillSwitch
 
 SkillSwitch 是一个基于 Electron + React + Vite 的 Windows 桌面工具，用来浏览源技能目录中的 `skill.md`，并将完整技能目录同步到多个本地目标槽位。
+<img src="resources/screenshot.png" width="500" />
 
 ## 主要能力
 
