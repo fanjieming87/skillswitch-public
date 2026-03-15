@@ -1,0 +1,37 @@
+appId: com.skillswitch.app
+productName: SkillSwitch
+electronDownload:
+  mirror: https://npmmirror.com/mirrors/electron/
+  customDir: "{{ version }}"
+directories:
+  output: release
+  buildResources: resources
+files:
+  - dist/**
+  - dist-electron/**
+  - package.json
+extraResources:
+  - from: resources
+    to: .
+    filter:
+      - icon.png
+      - icon.ico
+      - tray/**
+win:
+  icon: resources/icon.ico
+  target:
+    - target: portable
+      arch:
+        - x64
+portable:
+  artifactName: ${productName}-${version}-win-${arch}-portable.${ext}
+nsis:
+  artifactName: ${productName}-${version}-win-${arch}-setup.${ext}
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  installerIcon: resources/icon.ico
+  uninstallerIcon: resources/icon.ico
+  installerHeaderIcon: resources/icon.ico
+  shortcutName: SkillSwitch
